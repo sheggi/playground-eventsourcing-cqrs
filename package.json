@@ -30,5 +30,10 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "request": "^2.87.0"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "*.json"
+    ]
   }
 }

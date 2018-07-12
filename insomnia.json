@@ -1,0 +1,202 @@
+{
+	"_type": "export",
+	"__export_format": 3,
+	"__export_date": "2018-07-12T13:47:13.452Z",
+	"__export_source": "insomnia.desktop.app:v5.16.6",
+	"resources": [
+		{
+			"_id": "wrk_844bc4cfc7ee4b3089529f347e216931",
+			"created": 1531314767326,
+			"description": "",
+			"modified": 1531314767326,
+			"name": "Playground EventSourcing CQRS",
+			"parentId": null,
+			"_type": "workspace"
+		},
+		{
+			"_id": "env_e276681a0c6e4914844d3f3608ae4b94",
+			"color": null,
+			"created": 1531314767377,
+			"data": {
+				"accounting_api": "http://localhost:3030",
+				"stream_api": "http://localhost:3060",
+				"transaction_api": "http://localhost:3000"
+			},
+			"isPrivate": false,
+			"modified": 1531316188626,
+			"name": "New Environment",
+			"parentId": "wrk_844bc4cfc7ee4b3089529f347e216931",
+			"_type": "environment"
+		},
+		{
+			"_id": "jar_579d66ac67274f278a4bdce04d0f9caf",
+			"cookies": [],
+			"created": 1531314767379,
+			"modified": 1531314767379,
+			"name": "Default Jar",
+			"parentId": "wrk_844bc4cfc7ee4b3089529f347e216931",
+			"_type": "cookie_jar"
+		},
+		{
+			"_id": "fld_8cf1770780bb4495b2970d5ca5b99f44",
+			"created": 1531314778800,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531315465520,
+			"modified": 1531403141973,
+			"name": "Transaction",
+			"parentId": "wrk_844bc4cfc7ee4b3089529f347e216931",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_3c90039181b845d480539c86bf13d5e4",
+			"created": 1531314784087,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531315295161.75,
+			"modified": 1531403156782,
+			"name": "Accounting",
+			"parentId": "wrk_844bc4cfc7ee4b3089529f347e216931",
+			"_type": "request_group"
+		},
+		{
+			"_id": "fld_f946be62cd56494597538868b580ece6",
+			"created": 1531316146953,
+			"description": "",
+			"environment": {},
+			"metaSortKey": -1531315124803.5,
+			"modified": 1531403181319,
+			"name": "Stream",
+			"parentId": "wrk_844bc4cfc7ee4b3089529f347e216931",
+			"_type": "request_group"
+		},
+		{
+			"_id": "req_219800e8f6a945919651c6aaedcd448d",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"ammount\":100\n}"
+			},
+			"created": 1531314798862,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_dc53685158c8444c9576ca1d97eec9f1",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1531314798862,
+			"method": "POST",
+			"modified": 1531314968266,
+			"name": "Add Transaction",
+			"parameters": [],
+			"parentId": "fld_8cf1770780bb4495b2970d5ca5b99f44",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ transaction_api  }}/transaction/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_39b0d48a6a504428b8d6bfd5e6263f6c",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"ammount\":-100\n}"
+			},
+			"created": 1531400473382,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_dc53685158c8444c9576ca1d97eec9f1",
+					"name": "Content-Type",
+					"value": "application/json"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1529760235114.5,
+			"method": "POST",
+			"modified": 1531403171541,
+			"name": "Add  Negative Transaction",
+			"parameters": [],
+			"parentId": "fld_8cf1770780bb4495b2970d5ca5b99f44",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ transaction_api  }}/transaction/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_110292aecbf641e0ba4523d80ec4aa39",
+			"authentication": {},
+			"body": {},
+			"created": 1531314913358,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1531316167820,
+			"method": "GET",
+			"modified": 1531403159524,
+			"name": "Account",
+			"parameters": [],
+			"parentId": "fld_3c90039181b845d480539c86bf13d5e4",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ accounting_api  }}/accounting/",
+			"_type": "request"
+		},
+		{
+			"_id": "req_084a82d411214d37b224df06d79daada",
+			"authentication": {},
+			"body": {},
+			"created": 1531316167870,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1531316167870,
+			"method": "GET",
+			"modified": 1531403189821,
+			"name": "Fetch",
+			"parameters": [],
+			"parentId": "fld_f946be62cd56494597538868b580ece6",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ stream_api  }}/stream/?take=10&skip=5",
+			"_type": "request"
+		},
+		{
+			"_id": "req_c11601ada0ee4a7faf47f19b0afb0e50",
+			"authentication": {},
+			"body": {},
+			"created": 1531398448249,
+			"description": "",
+			"headers": [],
+			"isPrivate": false,
+			"metaSortKey": -1531398448249,
+			"method": "POST",
+			"modified": 1531398454039,
+			"name": "Push",
+			"parameters": [],
+			"parentId": "fld_f946be62cd56494597538868b580ece6",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "{{ stream_api  }}",
+			"_type": "request"
+		}
+	]
+}
